@@ -14,6 +14,7 @@ class AwesomePrint
       :multiline => true,
       :plain     => false,
       :indent    => 4,
+      :ar_collection_limit => 5,
       :color     => { 
         :array      => :white,
         :bigdecimal => :blue,

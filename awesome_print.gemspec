@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Dvorkin"]
-  s.date = %q{2010-06-03}
+  s.date = %q{2010-07-05}
   s.description = %q{Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports Rails ActiveRecord objects via included mixin.}
   s.email = %q{mike@dvorkin.net}
   s.extra_rdoc_files = [
@@ -44,22 +44,22 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{awesome_print}
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Pretty print Ruby objects with proper indentation and colors.}
   s.test_files = [
-    "spec/action_view_spec.rb",
-     "spec/active_record_spec.rb",
-     "spec/awesome_print_spec.rb",
+    "spec/awesome_print_spec.rb",
+     "spec/string_spec.rb",
      "spec/logger_spec.rb",
-     "spec/spec_helper.rb",
-     "spec/string_spec.rb"
+     "spec/active_record_spec.rb",
+     "spec/action_view_spec.rb",
+     "spec/spec_helper.rb"
   ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
