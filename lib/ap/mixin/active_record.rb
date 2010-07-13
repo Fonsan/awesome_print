@@ -49,9 +49,13 @@ module AwesomePrintActiveRecord
       res = object.send(r.name)
       if res.is_a?(Array)
         if res.length > 5 #@base.options[:ar_collection_limit]
-          res = res[0..5].map do |record|
-            awesome_active_record_instance_to_hash(record)
-          end + ["Only printing first five records out of (#{res.length}) records"]
+          res = res[0..5]
+        end
+        res.map! do |record|
+          awesome_active_record_instance_to_hash(record)
+        end
+        if res.length > 5
+          res += ["Only printing first five records out of (#{res.length}) records"]
         end
       else
         res =  awesome_active_record_instance_to_hash(res)
