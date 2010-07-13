@@ -38,7 +38,7 @@ module AwesomePrintActiveRecord
     object.class.column_names.inject(ActiveSupport::OrderedHash.new) do |hash, name|
       hash[name.to_sym] = object.send(name) if object.has_attribute?(name) || object.new_record?
       hash
-    end
+    end rescue {}
   end
 
   # Format ActiveRecord instance object with recursive printing.
